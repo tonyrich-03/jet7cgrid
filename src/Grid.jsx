@@ -1,33 +1,14 @@
+import React from 'react';
 import { range } from './utils';
-
-const gridStyles = {
-  width: '100px',
-  height: '100px',
-  border: '1px solid grey',
-  borderRadius: '5px',
-  backgroundColor: '#f3f3f3',
-};
-
-const containerStyles = {
-  display: 'flex',
-  flexDirection: 'column', // Stack rows vertically
-  alignItems: 'center', // Center rows horizontally
-  marginTop: '30px', // Space above the grid
-  gap: '10px', // Space between rows
-};
-
-const rowStyles = {
-  display: 'flex', // Arrange columns horizontally
-  gap: '10px', // Space between columns
-};
+import './index.css'; // Import the CSS file
 
 function Grid({ numRows, numCols }) {
   return (
-    <div style={containerStyles}>
+    <div className="grid-container">
       {range(numRows).map((rowIndex) => (
-        <div key={rowIndex} style={rowStyles}>
+        <div key={rowIndex} className="grid-row">
           {range(numCols).map((colIndex) => (
-            <div key={colIndex} style={gridStyles}></div>
+            <div key={colIndex} className="grid-cell"></div>
           ))}
         </div>
       ))}

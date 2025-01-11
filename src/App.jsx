@@ -1,10 +1,10 @@
-// App.jsx
 import React from 'react';
 import Grid from './Grid';
+import './index.css'; // Import the CSS file
 
 function App() {
   return (
-    <div style={{ padding: '20px', justifyContent: 'center' }}>
+    <div className="app-container">
       <Grid numRows={2} numCols={4} />
     </div>
   );
